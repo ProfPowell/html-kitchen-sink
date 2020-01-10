@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Kitchen Sink : HTML</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="some_user_defined" content="value" />
+		<link rel="stylesheet" href="external.css" />
+		<link rel="author" href="thomasapowell.html" />
+		<!-- set a base tag if y ou want to create a base URL for everything to prefix with 
+		
+			for example <base href="https://ucsd.edu" />
+		-->
+		<style>
+			.internalExample {background-color: yellow; font-style: italic;}
+		</style>
+	</head>
+	<body id="top">
+		<header>
+			<img src="kitchen_sink.png" alt="Kitchen Sink" />
+			<h1>Kitchen Sink Web Tech</h1>
+			<nav id="navbar">
+				<ul>
+					<li><a href="#linkdemos">Link</a></li>
+					<li><a href="#linkdemos">Link</a></li>
+					<li><a href="#linkdemos">Link</a></li>
+					<li><a href="#linkdemos">Link</a></li>
+				</ul>
+			</nav>
+		</header>
+		<hr />
+		<main>
+		<!-- The structure of an HTML document should include many block elements that define the sections of the document.  The inherent structure of a document inferred from the correct usage of semantic sectioning elements has both search engine optimization (SEO) benefits as well as provides appropriate clues for outling tools and assisistive access technologies such as screen readers.
+		        -->
+			<article>
+			<header>
+				<hgroup>
+				<h1>The HTML Kitchen Sink</h1>
+				<h2>We threw every HTML tags into a <del>sink</del> <ins>document</ins> so you could learn them quickly!</h2>
+				</hgroup>
+			</header>
+			<hr />
+			<section>
+				<h3>Introduction</h3>
+				<p>
+					The HTML markup language is nearly 30 years old and over its lifetime it is grown significantly in complexity.  However, at the same time web professionals have often skipped over learning basic HTML first in favor of immediately exploring design or programming frameworks.  While such a choice would seem appropriate to get hands on experience, skipping markup basics can be limiting resulting in confusion or even . It is our hope that by approaching HTML using it is understandable that we would want to get things done.
+				</p>
+			</section>
+					<section>
+						<h3><a href="https://html.spec.whatwg.org/multipage/syntax.html#comments">Comments</a></h3>
+						<p class="syntax">HTML comments are the form of <code>&lt;!-- an HTML comment --&gt;</code>.</p>
+						<!-- an HTML comment -->
+					
+						<p class="warning">With HTML comments be careful with embedding the -, !, &gt; and &lt; characters.</p>
+					
+						<p class="tip">HTML comments are useful for documenting features, showing authorship</p>
+					
+						<p class="warning">HTML comments are seen by anyone who looks at the page source as such page authors are warned to
+							avoid putting sensitive information in them or to strip the comments during a <a href="">minification</a>
+							process.</p>
+					
+						<p class="tip">HTML comments can be used to insert content that is inert and have it extracted using JavaScript. The
+							use of <code>data-*</code> attributes, a <code>template</code> element or string literals or other data format
+							within a <code>script</code> block is a preferred way to embed such data payloads.</p>
+					</section>
+			<section>
+				<h3><a href="https://html.spec.whatwg.org/multipage/syntax.html#character-references">Character Entities</a></h3>
+				<p>A few example entities are &lt; (less than &amp;lt;), &gt; (greater than &amp;gt;, &amp; (ampersand &amp;amp;, &copy; (copyright &amp;copy;) and numeric entities like &#9786; (a unicode smile).  Many many entities exist the main point is to understand the syntax and look up the symbol needed.</p>
+				</section>
+
+			<section>
+					<h4><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-root-element">The Document Element</a></h4>
+					<p>The <code>html</code> element surrounds the complete document and is the root of the parse tree.</p>
+					<p>The two allowed elements within the <code>html</code> element are the <code>head</code> element where we keep information about the page and its content and the <code>body</code> element which contains the actual content itself.</p>
+			</section>
+			<section>
+					<h4><a href="https://html.spec.whatwg.org/multipage/semantics.html#document-metadata">The Document Metadata</a></h4>
+
+					<p>The <code>meta</code>tag will be found in the head which is often used to set the character set of the document which should be the first thing set. (See the head of the document)  The <code>meta</code> tag also can be used to set keywords, simulate the equivalent of HTTP response headers and other configuration duties.</p>
+					<p>The <code>head</code> should contain a <code>title</code> tag which is the only mandatory HTML element for a document.  The title should be set to a descriptive value as it is used in book marks and search.</p>
+					<p>The <code>head</code> may also contain a variety of <code>link</code> tags which may be used to asscoiated a style sheet or define various navigational relationships.  The style of this <span class="externalExample">element was set by an exeternal style sheet</span>.  We also can use a <code>style</code> element in the <code>head</code> itself.  This <span class="internalExample">element style was set by an internal style block</span>.  The global attribute <code>style</code> also set <span style="background-color: lime;">style information inline</span>.  The choice between linked, document wide, or inline style varies based upon interest in performance and maintainability.  Generally you are encouraged to separate concerns as much as possible.</p>
+				</section>
+
+		<section>
+			<h4><a  href="https://html.spec.whatwg.org/multipage/sections.html">Sections</a></h4>
+			<p>The content of the page will be found in the <code>body</code> element.</p>
+			<p>If the content or portion of the content is a stand-alone unit of content as an article it should be found within the <code>article</code> element.  Look at line 35 this document is a complete article.  Notice it is found in the <code>main</code> element as well.  There is some degree of confusion around <code>main</code>, <code>section</code> and <code>article</code> in terms of encapsulation so be aware of how you might use them.</p>
+			<p>The <code>section</code> element has been used heavily in the document as is used to break up content in chunks.  It is a bit more semantic than <code>div</code> which is even more generic.</p>
+			<p>Navigation items particular for site or section navigation should be found within a <code>nav</code> element as the "navbar" above demonstrates.</p>
+			<p>The next element is wonderful for non-linera thinkers lie me.</p>
+			<aside>
+				The Professor really <em>loves</em> <code>aside</code> tags and asides in general as they tend to reveal the non-linear thinking patterns which can lead to interesting insights.
+			</aside>
+			<p>Headings ranging from <code>h1</code> to <code>h6</code> should be used to outline content.  The document has been using them agressively, but as a sample here are the headings repeated.</p>
+			<section>
+				<h1>Heading 1</h1>
+				<h2>Heading 2</h2>
+				<h3>Heading 3</h3>
+				<h4>Heading 4</h4>
+				<h5>Heading 5</h5>
+				<h6>Heading 6</h6>
+			</section>
+			<p>Headings can be grouped together using the <code>hgroup</code> element to limit the outlining function.</p>
+			<section>
+				<hgroup>
+					<h1>Heading</h1>
+					<h2>Subheading</h2>
+				</hgroup>
+				<p>The headings above are treated as a single unit while the headings below are treated as two units.</p>
+				<h1>Heading</h1>
+				<h2>Subheading</h2>
+			</section>
+
+			<p>When creating sections you may wish to specify the <code>header</code> and <code>footer</code>.  This sectioning elements can appear for the whole document or individually within sections.</p>
+			
+			<section>
+				<header>Header</header>
+				<p>Section body</p>
+				<footer>Footer</footer>
+			</section>
+
+			<p>A special section element <code>address</code>is often <a href="#address_element">found at the bottom of the document</a> that sets the contact information or address of the organization responsible for the document.</p>
+		</section>
+				
+			<section>
+				<h3><a href="https://html.spec.whatwg.org/multipage/grouping-content.html">Grouping Content</a></h3>
+				<p>A variety of content grouping elements are found in HTML.  The most commonly used is the generic <code>div</code> element.  A more meaningful element <code>p</code> is used to deliinate paragraphs.</p>
+
+				<p>When breaking apart sections we may wish to employ the void element <code>hr</code> to insert a  horizontal rule like so.</p>
+				<hr />
+				<p>A <code>blockquote</code> element is useful to to quote large amounts of content.  A smaller quotation should be placed inline using a <code>q</code> element.</p>
+
+				<blockquote>
+					Far out in the uncharted backwaters of the unfashionable end of the Western Spiral arm of the Galaxy
+					lies a small unregarded yellow sun.
+					<cite>The <a id="word3">Hitchhiker</a>'s Guide to the Galaxy, Douglas Adams</cite>
+				</blockquote>
+
+				<p>HTML supports a variety of list elements including both unordered (<code>ul</code>) and ordered (<code>ol</code>) lists.  In either list case individual items are specificed using the list item (<code>li</code>) element. A specialized definition list is often used in glossary style lists and uses the <code>dt</code> (definition term) and <code>dd</code> (definition) within a <code>dl</code> definition list.</p>
+			
+		
+			<ul>
+				<li>Unordered 1
+					<ol>
+						<li>Ordered 1</li>
+						<li>Ordered 2</li>
+					</ol>
+				</li>
+				<li>Unordered 3</li>
+				<li>Unordered 4</li>
+			</ul>
+		
+			<dl>
+				<dt>Dingus</dt>
+				<dd>A fake word for a gadget or doo-dad.</dd>
+				<dt>Widget</dt>
+				<dd>A fake word like a dingus or gadget</dd>
+			</dl>
+
+
+			<p>A specialized <code>menu</code> element is supposed to be employed when the items are interactive as shown here.</p>
+				<menu>
+					<li><button onclick="alert('New document')">New</button></li>
+					<li><button onclick="alert('Open document')">Open</button></li>
+					<li><button onclick="alert('Quit')">Quit</button></li>
+				</menu>
+
+			<p>When source code or other preformatted content should be include and white space should be preserved use the <code>pre</code> tag</p>
+				<pre>
+					let school = 'UCSD';
+
+					/**
+					 * helloJSWorld - the prototypical example complete with opinoniated mistakes!
+					 */
+					function helloJSWorld() {
+					  // say hello as one would
+
+					  alert(`Hello World students at ${school}!`);
+					} /* helloJSWorld */
+
+					helloJSWorld();
+				</pre>
+
+				<p>A figure is a semantic way to insert something like a chart or picture.</p>
+				<figure>
+					<img src="chart.png" alt="Scatter showing distributions of HTML elements with a long tail double peek around 300 and 400">
+					<p>Source:<cite><a href="https://almanac.httparchive.org/en/2019/markup">Web Almanac</a></cite></p>
+					<figcaption>HTML Element frequencies circa 2019</figcaption>
+				</figure>
+	
+			
+				<div>
+					<p>Some of the most used and abused tags in HTML are clearly <code>div</code> and <code>span</code>.  The <span>really don't mean much</span> and are just used to <span>group items and <em>elements</em> together</span> for some author defined purpose.</p>
+					<p>In years past pundits would bemoan the lack of semantics that table laden sites exhibited.  It seems in the modern area we don't worry about that and just put <code>div</code> or <code>span</code> around it</p>
+					<div>
+						<div>I could have been a <span>contender</span>! Yet without anything else I am just a plain old block or inline box.</div>
+						<div class="jumbotron hero slide">Who knows maybe with some classes and a framework I'll get some style and action!</div>
+						<div>
+							<div class="warn">Careful!</div>
+							<div class="msg">You can easily start getting a <div class="danger">chronic case of <div class="inner">Divitis</div></div>
+							<div>It sure looks semantic <div class="a1 b2 c3">but it </div> reall <div class="as3432424 as42312">isn't!</div> No where have I seen delicious markup like this? <div>Don't over <em>react</em> it is a truthful point, just few your rendered source and enjoy the result as well as potentially nasty SEO, performance and a11y penalties unless you do even more work.</div>
+							<div>Use the platform isn't just a JavaScript rallying cry it works for markup too!</div> 
+							<!-- this kind of nest isn't that crazy actually -->
+							</div>
+							</div>
+							</div>
+							</div>
+							</div>
+			</section>
+			<section>
+				<h3>Text Level Elements</h3>
+				<p>There are <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html">many inline text elements</a>.  Things get a little iffy here for HTML novices because the default renderings can encourage you to think presentationally as opposed to semantically.  Resist the pull to the dark side of markup and keep things logical applying look later with CSS!</p>
+				<section>
+						&lt;em&gt; - <em>Emphasis</em><br />
+						&lt;strong&gt; - <strong>Strong</strong><br />
+						&lt;small&gt; - <small>Small</small><br />
+						&lt;s&gt; - <s>Strike</s> is or isn't suggested, careful with it<br />
+						&lt;cite&gt; - <cite>Citation</cite><br />
+						&lt;q&gt; - <q>Quote</q><br />
+						&lt;dfn&gt; - Pedantic - <dfn>needless display of knowledge</dfn> <br />
+						&lt;abbr&gt; - <abbr>UCSD</abbr> is an abbreviation of University of California, San Diego<br />
+						&lt;ruby&gt; - <ruby>Ruby<rp>(</rp>
+							<rt>Ruby Text</rt>
+						<rp>)</rp>
+						</ruby><br />
+						&lt;data&gt; - <data value="111234.0345">111234</data><!-- this could be useful!? --><br />
+						&lt;time&gt; - <time datetime="2019-12-12">Thu, 12 Dec 2019 19:24:33 +0000</time><br />
+						&lt;code&gt; - <code>code</code><!-- this is often used with tech content --><br />
+						&lt;var&gt; - <var>Variable</var><br />
+						&lt;samp&gt; - <samp>Sample</samp><br />
+						&lt;kbd&gt; - <kbd>Keyboard</kbd><br />
+						&lt;sub&gt; - <sub>Subscript</sub><br />
+						&lt;sup&gt; - <sup>Superscript</sup><br />
+						<!-- careful with these they are often discouraged -->
+						&lt;i&gt; - <i>Italic</i><br />
+						&lt;b&gt; - <b>Bold</b><br />
+						&lt;u&gt; - <u>Underline</u><br />
+						&lt;mark&gt; - <mark>Mark</mark><br />
+						&lt;bdi&gt; - TODO: the bdi element<br />
+						&lt;bdo&gt; - TODO:  the bdo element<br />
+						&lt;span&gt; - <span>spaned text in here</span><br />
+						&lt;br&gt; - Line break ahead!<br /><br>
+						<p>Sometimes you want a line break and sometimes you don't. Why not insert an element to tell the browser where you are
+							ok breaking
+							within_some_<wbr>very_long_bit_of_unbreakable_text_that_is_way_too_<wbr>_and_should_not_be_used_as_it_is_getting_totally_out_of_control!</p>
+				</section>
+			</section>
+			<section>
+				<h3>Links - Putting the Hyper in HyperText!</h3>
+				<p>Links can link <a href="https://ucsd.edu">offsite</a> within a document to jump you <a href="#top">up</a> and <a href="#foot">down a page.</a></p>
+				<p>Links can use non-HTTP style URLs <a href="mailto:fakeuser@example.com">fakeuser@example.com</a> and can be both outbound and <a href="#foot" id="linkdemos">go to the footer and jump back</a></p>
+				<p>Links when defined with the <code>link</code> element can be quite interesting look at the head for a few for CSS or explore ideas like prefetching with this tag.
+				</p>
+			</section>
+			<section>
+				<hgroup>
+				<h3>Editing</h3>
+				<h4>Just two elements have <a href="https://html.spec.whatwg.org/multipage/edits.html">their own section</a> for some reason?</h4>
+				</hgroup>
+				<p>The two elements <code>ins</code> and <code>del</code> can be used to indicated content which has been <ins>inserted</ins> or <del>deleted</del>.  Important attributes for these elements help us provide indications about when a <del>deletion</del> <ins>or insertion occurred</ins> and potentially reasons why such <ins cite="somereference.html">modifications where made.</ins></p>
+
+	
+			</section>
+			<section>
+				<h3>Embedded Content</h3>
+				<a href="https://html.spec.whatwg.org/multipage/embedded-content.html">specification</a>
+				<!-- picture, source and image -->
+				<a href="https://html.spec.whatwg.org/multipage/images.html">More information on images</a>
+				
+				<!-- TODO: add more interesting image and picture examples to demonstrate types and source sets this can come with the image content shortly -->
+			</section>
+			<section>
+				<a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html">Iframe, Embed, Object specification</a>
+				<!-- TODO: add more for iframes, embed, object, and param-->
+				<iframe src="https://www.ucsd.edu" height="400" width="200"></iframe>
+			
+			</section>
+			<section>
+				<a href="https://html.spec.whatwg.org/multipage/media.html">Media specification</a>
+				<!-- TODO: video, audio, track demos-->
+			</section>
+			<section>
+				<hgroup>
+				<h3>Image Maps</h3>
+				<h4>An old technique that is actually somewhat useful</h4>
+				</hgroup>
+				<p>An image map using the <a href="https://html.spec.whatwg.org/#image-maps">&lt;map&gt; and &lt;area&gt;</a> tags allows us to make an image where different pieces are clickable and goes to different places as opposed to a single portion of the image being the click zone.</p>
+				<h4>Image has <em>hostpots</em> using an imagemap</h4>
+				<img id="imgUCSD" alt="UCSD image map" src="imagemap.jpg" usemap="#logosmap" height="400" width="600" />
+				<map name="logosmap">
+					<area shape="rect" coords="0,0,600,165" href="https://ucsd.edu/" alt="UCSD" target="_blank">
+					<area shape="rect" coords="0,184,280,369" href="https://cse.ucsd.edu/" alt="UCSD CSE" target="_blank">
+					<area shape="rect" coords="310,185,600,369" href="https://datascience.ucsd.edu/" alt="UCSD Data Science" target="_blank">
+				</map>
+
+			</section>
+			<section>
+				<h3>Math!? I thought this was Markup</h3>
+				<p><a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html">MathML</a> is <a href="https://caniuse.com/#feat=mathml">more supported</a> now, <strong><mark>but <a href="https://caniuse.com/#feat=mathml">not in Chrome (yet)!</a></mark></strong>. Well depending on your discipline you might want to know how to use MathML and polyfill it if need be.</p>
+				<math>
+					<mtext> Theorem 1: </mtext>
+					<mtext> &#x2009;
+						<!--THIN SPACE-->
+					</mtext>
+					<mtext> &#x205F;&#x200A;
+						<!--space of width 5/18 em-->
+					</mtext>
+					<mtext> Pythagorean theorem: &#x205F;&#x200A;</mtext>
+					<mrow>
+						<mrow>
+							<msup>
+								<mi>x</mi>
+								<mn>2</mn>
+							</msup>
+							<mo>+</mo>
+							<msup>
+								<mi>y</mi>
+								<mn>2</mn>
+							</msup>
+						</mrow>
+						<mo>=</mo>
+						<msup>
+							<mi>z</mi>
+							<mn>2</mn>
+						</msup>
+					</mrow>
+				</math>
+				<br>
+				<br>
+				<math>
+					<mrow>
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+									<mo>+</mo>
+									<msqrt>
+										<mn>9</mn>
+									</msqrt>
+								</mrow>
+								<mn>2</mn>
+							</mfrac>
+						</mrow>
+						<mo>=</mo>
+						<mn>2</mn>
+					</mrow>
+				</math>
+				<br>
+				<br>
+				<math>
+					<mrow>
+						<mrow>
+							<mrow>
+								<mn>2</mn>
+								<mo>&#x2062;</mo>
+								<mi>x</mi>
+							</mrow>
+							<mo>+</mo>
+							<mi>y</mi>
+							<mo>-</mo>
+							<mi>z</mi>
+						</mrow>
+						<mo>&gt;</mo>
+						<mn>16</mn>
+					</mrow>
+				</math>
+				<br>
+				<br>
+				<math>
+					<mrow>
+						<mrow>
+							<mi>f</mi>
+							<mo>&#x2061;
+								<!--FUNCTION APPLICATION-->
+							</mo>
+							<mo>(</mo>
+							<mi>x</mi>
+							<mo>)</mo>
+						</mrow>
+						<mo>=</mo>
+						<mrow>
+							<msup>
+								<mrow>
+									<mo>(</mo>
+									<mrow>
+										<mi>x</mi>
+										<mo>+</mo>
+										<mn>1</mn>
+									</mrow>
+									<mo>)</mo>
+								</mrow>
+								<mn>4</mn>
+							</msup>
+							<mo>=</mo>
+							<mrow>
+								<msup>
+									<mi>x</mi>
+									<mn>4</mn>
+								</msup>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mo>&#x2062;
+										<!--INVISIBLE TIMES-->
+									</mo>
+									<msup>
+										<mi>x</mi>
+										<mn>3</mn>
+									</msup>
+								</mrow>
+								<mo>+</mo>
+								<mrow>
+									<mn>6</mn>
+									<mo>&#x2062;
+										<!--INVISIBLE TIMES-->
+									</mo>
+									<msup>
+										<mi>x</mi>
+										<mn>2</mn>
+									</msup>
+								</mrow>
+								<mo>+</mo>
+								<mrow>
+									<mn>4</mn>
+									<mo>&#x2062;
+										<!--INVISIBLE TIMES-->
+									</mo>
+									<mi>x</mi>
+								</mrow>
+								<mo>+</mo>
+								<mn>1</mn>
+							</mrow>
+						</mrow>
+					</mrow>
+				</math>
+
+			</section>
+			<section>
+				<h3>SVG is native and the heart of dataviz</h3>
+				<p><a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html">SVG</a> is very well <a
+						href="https://caniuse.com/#feat=svg">supported</a>. This XML derived markup language powers charting libraries from <a href="https://amcharts.com">AmCharts</a> to <a href="https://zingchart.com">ZingChart</a> and of course everyone's favorite <a href="https://d3js.org">D3</a>.</p>
+				<svg width="800" height="400">
+					<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+					<rect x="150" y="50" rx="20" ry="20" width="250" height="75" fill="yellow" stroke="blue" stroke-width="10" /> 
+					<polygon points="300,10 350,30 260,80 310,40" fill="blue" stroke="red" stroke-width="5" />
+				</svg>
+			</section>
+			<section>
+				<h3>Table Time!</h3>
+				<p>HTML tables used to be the backbone of design, today they are back to their normal use. Given that data powers our world we should (re)discover what features HTML tables provide and then and only then turn to libraries to help us present data in a tabular manner.  Understand that if we want to interact with data we call that a <em>datagrid</em> which is a different thing all together.  For now datagrids are not native in HTML, but libraries like <a href="https://handsontable.com">Handsontable</a> and <a href="https://zinggrid.com">ZingGrid</a> can certainly address that.</p>
+				<table style="border: 1px solid black">
+					<caption>Class Schedule</caption>
+					<colgroup>
+						<col style="width: 150px;" />
+						<col style="width: 100px;" />
+						<col style="width: 100px;" />
+						<col style="width: 100px; background-color:#97DB9A;" />
+						<col />
+						<col style="width: 100px;" />
+						<col span="2" style="width: 50px; background-color: #97DB9A" />
+					</colgroup>
+					<thead>
+					<tr>
+						<td rowspan="2">&nbsp;</td>
+						<td colspan="5" style="text-align: center">Weekdays</td>
+						<td colspan="2">Weekend</td>
+					</tr>
+						<tr>
+							<th>Mon</th>
+							<th>Tues</th>
+							<th>Wed</th>
+							<th>Thurs</th>
+							<th>Fri</th>
+							<th>Sat</th>
+							<th>Sun</th>
+						</tr>
+					</thead>
+			
+					<tbody>
+				
+					<tr>
+						<th>8:00 AM</th>
+						<td>DSC 10</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>DSC 1</td>
+						<td>CSE 15L Lab</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>10:00 AM</th>
+						<td>DSC 10</td>
+						<td>DSC 10</td>
+						<td>&nbsp;</td>
+						<td>DSC 1</td>
+						<td>CSE 15L Lab</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>12:00 PM</th>
+						<td>&nbsp;</td>
+						<td>CSE 100</td>
+						<td>&nbsp;</td>
+						<td>DSC 1</td>
+						<td>CSE 15L Lab</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>2:00 PM</th>
+						<td>&nbsp;</td>
+						<td>DSC 10</td>
+						<td>&nbsp;</td>
+						<td>DSC 10</td>
+						<td>CSE 100</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					</tbody>
+
+					<tfoot>
+						<tr>
+							<td colspan="8" style="text-align: center;">Table footer</td>
+						</tr>
+					</tfoot>
+				</table>
+
+			</section>
+			<section>
+				<h3>Form Fun</h3>
+				<p>Intearctive forms in HTML initially solely powered posting data to server-side programs.  Today forms are used to power complex client side applications written in JavaScript. Much of the markup complexity is found with the <a href="https://html.spec.whatwg.org/multipage/input.html"><code>input</code> element</a> which does many things.  However, other <a href="https://html.spec.whatwg.org/multipage/form-elements.html">form elements</a> can be quite complex themselves. Before moving on to JavaScript make sure you fully understand all the <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html">details around form controls</a>  otherwise you will have gaps in your knowlege and may run into trouble or do needless scripting when you could just use platform provided features directly.</p>
+				<form action="http://httpbin.org/post" oninput="x.value=parseInt(mileage.value)" method="post" name="registration">
+				
+					<!-- hidden form fields don't show on screen and are often used for control information, they are inherently like all HTML elements modifable so be cautious in what you store in them -->
+					<input type="hidden" name="formId" value="somenottrulyhiddenvalue">
+					<fieldset>
+						<legend> Personal Information </legend>
+						<label for="name"> Name: </label>
+						<input type="text" name="name" id="name" autofocus required />
+						<br />
+						<label> Gender: </label>
+						<label for="male"> Male </label>
+						<input type="radio" name="gender" id="male" value="male" checked />
+						<label for="female"> Female </label>
+						<input type="radio" name="gender" id="female" value="female" />
+						<label for="other"> Other </label>
+						<input type="radio" name="gender" id="other" value="other" />
+						<br />
+						<label for="birth"> Date of birth: </label>
+						<input type="date" name="birth" id="birth" />
+						<br />
+						<label for="phone"> Phone number: </label>
+						<input type="tel" name="phone" id="phone" autocomplete="on" required />
+						<br />
+						<label for="email"> Email: </label>
+						<input type="email" name="email" id="email" autocomplete="on" />
+						<br />
+						<label for="password"> Create password: </label>
+						<input type="password" name="password" id="password" autocomplete="on" />
+						<br />
+						<label for="ssn"> SSN: </label>
+						<input type="number" name="ssn" id="ssn" required />
+						<br />
+						<label for="address"> Address: </label>
+						<input type="text" name="address" id="address" autocomplete="on" />
+						<label for="zip"> Zip code: </label>
+						<input type="text" name="zip" id="zip" pattern="[0-9]*" maxlength="5" autocomplete="on" required />
+						<label for="state"> State: </label>
+						<input type="text" name="state" id="state" autocomplete="on" />
+					</fieldset>
+					<br>
+					<fieldset>
+						<legend> Car Information </legend>
+						<label for="make"> Make: </label>
+						<select name="make" id="make">
+							<optgroup label="Swedish Cars">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+							</optgroup>
+							<optgroup label="German Cars">
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</optgroup>
+						</select>
+						<br />
+						<label for="category"> Category: </label>
+						<input list="car-categories" name="category" id="category" required />
+						<datalist id="car-categories">
+							<option value="Gas"></option>
+							<option value="Electrical"></option>
+							<option value="Hybird"></option>
+							<option value="Diesel"></option>
+						</datalist>
+						<br />
+						<label for="type"> Type: </label>
+						<input list="car-types" name="type" id="type">
+						<datalist id="car-types">
+							<option value="Hatchback"></option>
+							<option value="Sedan"></option>
+							<option value="SUV"></option>
+							<option value="Crossover"></option>
+							<option value="Coupe"></option>
+							<option value="Convertible"></option>
+						</datalist>
+						<br />
+						<label for="color"> Color: </label>
+						<input type="color" name="color" id="color" />
+						<br />
+						<label for="year"> Year built: </label>
+						<input type="number" name="year" id="year" />
+						<br />
+						<label for="purchase"> Purchase year and month: </label>
+						<input type="month" name="purchase" id="purchase" />
+						<br />
+						<label for="plate"> Plate number: </label>
+						<input type="text" name="plate" id="plate" /> 
+						<br />
+						<label for="isOperational"> Is this vehicle under planned non operation? </label>
+						<input type="checkbox" name="isOperational" id="isOperational" /> Yes
+						<br />
+						<label for="mileage"> Current Milage: </label>
+						0<input type="range" name="milage" id="mileage" step="250" value="0" min="0" max="100000" />100000 <output name="x"
+							for="mileage"></output>
+						<br>
+						<label for="photo"> Upload a photo of the car: </label>
+						<input type="file" name="photo" id="photo" />
+						<br>
+						<label for="accessories"> Which accessories does your car have? </label><br />
+						<select name="accessories" id="accessories" multiple>
+							<option value="blanket">Blanket</option>
+							<option value="cover">Car Cover</option>
+							<option value="toolkit">Comprehensive Tool Kit</option>
+							<option value="freshener">Air Freshener</option>
+							<option value="aidkit">First Aid Kit</option>
+							<option value="lock">Steering Wheel Lock</option>
+						</select>
+					</fieldset>
+					<br />
+					<fieldset>
+						<legend> Shipping Information </legend>
+						<label for="shippingWeek"> When do you want to receive your registration: </label>
+						<input type="week" name="shippingWeek" id="shippingWeek" />
+					</fieldset>
+					<br />
+					<fieldset>
+						<legend> Registrar Information (read only &amp; disabled)</legend>
+						<label for="registrar"> Registrar: </label>
+						<input readonly type="text" value="Fake Car Registration Company" name="registrar" id="registrar" />
+						<br />
+						<label for="date"> Form publish date: </label>
+						<input readonly type="datetime-local" value="2019-12-20T19:30" name="date" id="date" />
+						<br />
+						<label for="formVersion"> Form version: (Disabled) </label>
+						<input type="text" value="v1.3" name="formVersion" id="formVersion" disabled />
+					</fieldset>
+					<br>
+					<label for="comment"> Add comments: </label><br>
+					<textarea rows="4" cols="50" id="comment" name="comment" placeholder="Please add your comments here"></textarea>
+					<br />
+					<br />
+					<button type="reset"> Reset Form <img src="reset_button.png" width="20" alt="reset"></button>
+					<button type="submit"> Submit Form <img src="submit_button.png" width="20" alt="submit"></button>
+					<button type="button" onclick="alert('clicked')"> Generic Button</button>
+					<br />
+					<br />
+					<h4>Alternate Form of Button</h4>
+					<input type="reset" value="Reset Form" />
+					<input type="submit" value="Submit Form" />
+					<input type="button" value="Generic Button" onclick="alert('clicked!');" />
+				</form>
+
+			</section>
+
+			<section>
+				<hgroup>
+				<h3>Interaction is Coming</h3>
+				<h4>Framework based, custom-elements, or plain old HTML declarative widgets will rule the 2020s</h4>
+				</hgroup>
+				<p>HTML 5 started a trend with richer form fields and a <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#interactive-elements">few interactive elements</a> but likely we will see most UI widgets move away from a collection of &lt;div&gt;tags and scripts to more obvious declaritive elements.  The specification already supports <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements">custom elements</a> so we can do this easily enough even without a framework.</p>
+				<h4>Details Demo</h4>
+				<details>
+					<summary>Click to see important details</summary>
+					<ul>
+						<li>Important detail</li>
+						<li>Other important detail</li>
+						<li><em>Most</em> important detail</li>
+					</ul>
+				</details>
+
+				<h4>Dialog Demo</h4>
+			<dialog id="quoteDialog">
+				<p>Be conservative in what you do, be liberal in what you accept from others - <cite>Postel's Law</cite>
+				</p>
+				<button  onclick="document.getElementById('quoteDialog').open=false">Close</button>
+			</dialog>
+			<button onclick="document.getElementById('quoteDialog').open=true;">Open Dialog</button>
+				
+				<h4>Basic Script Tag Use</h4>
+				<script>
+				  let msg = "significant worries";
+
+				  document.write(`On this day ${new Date()} you see a simple example showing how JavaScript and HTML can be freely intermixed, but there are <strong>${msg}</strong> when this is not understood which may result in render blocking and performance problems!`);
+
+				</script>
+				<h4>Custom Element Example</h4>
+				<template id="hello-wc-template">
+					<p>Custom Element Hello World this was in the shadow DOM, but I can still see the <slot></slot>
+					</p>
+				</template>
+				<hello-wc>Light DOM</hello-wc>
+				<script src="webcomponent.js"></script>
+				<h4>Canvas Example</h4>
+				<canvas id="myCanvas" width="300" height="300"></canvas>
+				<script>
+				    let canvas = document.getElementById('myCanvas');
+					let context = canvas.getContext('2d');
+
+					context.strokeStyle = "black";
+					context.lineWidth = 5;
+
+					/* create a frame for our drawing */
+					context.beginPath();
+					context.fillStyle = "blue";
+					context.moveTo(50, 20);
+					context.arcTo(280, 20, 280, 280, 30);
+					context.arcTo(280, 280, 20, 280, 30);
+					context.arcTo(20, 280, 20, 20, 30);
+					context.arcTo(20, 20, 280, 20, 30);
+					context.stroke();
+					context.fill();
+
+					/* draw circle for head */
+					context.beginPath();
+					context.fillStyle = "yellow";
+					context.arc(150, 150, 100, 0, Math.PI * 2, true);
+					context.fill();
+
+					/* draw the eyes, nose and mouth */
+					context.beginPath();
+					context.moveTo(80, 110);
+					context.bezierCurveTo(95, 85, 115, 85, 130, 110);
+					context.moveTo(170, 110);
+					context.bezierCurveTo(185, 85, 205, 85, 220, 110);
+					context.moveTo(155, 130);
+					context.quadraticCurveTo(130, 145, 155, 155);
+					context.moveTo(100, 175);
+					context.quadraticCurveTo(150, 250, 200, 175);
+					context.moveTo(50, 20);
+					context.stroke();
+				</script>
+				<noscript>
+					Error: You missed lots of cool demos from JavaScript.
+				</noscript>
+			</section>
+
+			
+			</article>
+		</main>
+		<hr />
+		<footer id="foot">
+			<p>
+				This kitchen sink of HTML example is brought to you by D&amp;W Inc. purveyors of fine examples and demos. &copy; 2020
+				D&amp;W Inc.
+			</p>
+			<p>If you are lost you might find your way back to the <a href="#linkdemos">link demos</a></p>
+			<address id="address_element">D&amp;W Inc.<br />
+				1122 Fake St.<br />
+				San Diego, CA 92109<br />
+				858.555.1212<br />
+			</address>
+		
+		</footer>
+	</body>
+</html>
