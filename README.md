@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ProfPowell/html-kitchen-sink)
+
 # html-kitchen-sink
 All of HTML5 in one big kitchen sink demo. 
 
